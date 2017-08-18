@@ -11,6 +11,11 @@ public class JarReflection {
 	
 	private static String fileExtension = ".jar" ;
 
+	/**
+	 * Finds the list of all class files in a jar file and returns their fully qualified names
+	 * @param jarFilePath
+	 * @return List<String>
+	 */
 	private List<String> processClassFiles(String jarFilePath) {
 		List<String> classNames = new ArrayList<String>();
 		try {
@@ -27,6 +32,11 @@ public class JarReflection {
 		}
 	}
 	
+	/**
+	 * Finds all the class names within all the jar files across multiple levels of directory
+	 * @param directoryPath
+	 * @return List<String>
+	 */
 	public List<String> getAllContents(String directoryPath){
 		List<String> classNames = new ArrayList<>();
 		File folder = new File(directoryPath);
